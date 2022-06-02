@@ -6,16 +6,22 @@ export default defineConfig({
   base: "/grab/",
   description: "build and deploy universal javascript servers",
   lastUpdated: true,
+
   themeConfig: {
-    socialLinks: [
-      { icon: "github", link: "https://github.com/barelyhuman/grab" },
-    ],
-    editLink: {
-      repo: "barelyhuman/grab",
-    },
+    repo: "barelyhuman/grab",
+    docsDir: "docs",
+    docsBranch: "main",
+    editLinks: true,
+    editLinkText: "edit this page on github",
+    lastUpdated: "last updated",
+
     nav: [
       { text: "guide", link: "/guide/", activeMatch: "^/guide/" },
-      { text: "reference", link: "/reference/cli", activeMatch: "^/reference/" },
+      {
+        text: "reference",
+        link: "/reference/cli",
+        activeMatch: "^/reference/",
+      },
       {
         text: "download",
         link: "https://github.com/barelyhuman/grab/releases",
@@ -29,16 +35,14 @@ function getGuideSidebar() {
   return [
     {
       text: "introduction",
-      items: [
+      children: [
         ["/guide/", "getting started"],
         ["/guide/installation", "installation"],
       ].map((i) => toItem(i)),
     },
     {
-      text:"reference",
-      items:[
-        ["/reference/cli","cli"]
-      ].map((i)=>toItem(i))
+      text: "reference",
+      children: [["/reference/cli", "cli"]].map((i) => toItem(i)),
     },
   ];
 }

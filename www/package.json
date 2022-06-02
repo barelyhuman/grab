@@ -9,6 +9,6 @@
     "serve": "vitepress serve docs"
   },
   "devDependencies": {
-    "vitepress": "^1.0.0-alpha.1"
+    "vitepress": "0.22.4"
   }
 }

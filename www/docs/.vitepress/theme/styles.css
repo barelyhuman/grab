@@ -1,10 +1,30 @@
 :root {
-  --vp-c-brand: #f6c177;
-  --vp-c-brand-light: #f6c177;
-  --vp-button-brand-bg: #f6c177;
-  --vp-c-brand-lighter: #f6c177;
-  --vp-c-brand-dark: #f6c177;
-  --vp-c-brand-darker: #f6c177;
-  --vp-button-brand-text: #18181b;
-  --vp-button-brand-hover-text: #18181b;
+  --c-brand: #26e7ed;
+  --c-brand-light: #26e7ed;
+}
+
+a {
+  color: var(--c-text) !important;
+}
+
+p a {
+ text-decoration: underline;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --c-bg: #18181b !important;
+    --c-text: rgb(255,255,255,87%);
+    --c-text-light:  rgb(255,255,255,87%);
+  }
+  .custom-block {
+    color: var(--c-text) !important;
+    background-color: var(--c-bg) !important;
+  }
+  tr:nth-child(2n) {
+    background-color: inherit !important;
+  }
+  .action > a {
+    color: var(--c-bg) !important;
+  }
 }

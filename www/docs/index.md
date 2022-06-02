@@ -1,29 +1,25 @@
 ---
-layout: home
-editlink: true
-
 sidebar: false
-
-hero:
-  name: "grab"
-  tagline: asset downloader 
-
-  actions:
-    - theme: brand
-      text: read docs
-      link: /guide/
-    
-    - theme: alt
-      text: support
-      link: https://github.com/sponsors/barelyhuman
+home: true
+heroText: grab
+tagline: the asset downloader
+actionText: read docs
+actionLink: /guide/
 
 features:
-  - title: open source
-    details: easier to fix bugs that are in the open 
-  - title: multi provider support
-    details: cause, it downloads stuff from github releases isn't marketable enough
-  - title: cross platform
-    details: i wouldn't build it if it wasn't
-  - title: extendable
-    details: the cli does one thing and one thing only, while letting you extend it with further behaviours as needed
+  - title: 😌 easy
+    details: both to setup and to use, at least i think so
+  - title: ⚡️ faster
+    details: no 3rd party resolver services, directly request for assets from the actual provider
+  - title: ☠️ failsafe
+    details: services can go down, a cli on your system will not
+
+
+footer: MIT Licensed | Made for fun by Reaper
 ---
+
+Make downloading assets as easy as
+
+```sh
+grab barelyhuman/commitlog
+```
