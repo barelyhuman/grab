@@ -6,7 +6,7 @@
 
 A CLI tool built specifically to download tarballs and assets from various open source and release asset providers.
 
-The first set of providers that we are wish to get working are
+The initial set of providers that we wish to get working
 
 - [x] Github
 - [ ] Gitlab
