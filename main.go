@@ -30,6 +30,11 @@ func main() {
 				Usage:   "the provider to use, to see supported providers run 'grab providers'",
 				Value:   "github",
 			},
+			&cli.StringFlag{
+				Name:    "filename",
+				Aliases: []string{"f"},
+				Usage:   "the filename to grab, if files are similarly named",
+			}
 		},
 		Commands: []*cli.Command{
 			{

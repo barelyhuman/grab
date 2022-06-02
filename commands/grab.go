@@ -4,19 +4,19 @@ import (
 	"log"
 	"os/exec"
 	"path"
-	"runtime"
-	"strings"
 
 	"github.com/barelyhuman/go/env"
 	"github.com/barelyhuman/go/semver"
 	"github.com/barelyhuman/grab/resolver"
 	ghr "github.com/barelyhuman/grab/resolver/github"
+	"github.com/barelyhuman/grab/utils"
 	"github.com/urfave/cli/v2"
 )
 
 func Grab(c *cli.Context) (err error) {
 	repo := c.Args().Get(0)
 	provider := c.String("provider")
+	filename := c.String("filename")
 	var binResolver resolver.Resolver
 
 	switch provider {
@@ -35,10 +35,6 @@ func Grab(c *cli.Context) (err error) {
 		return err
 	}
 
-	if runtime.GOOS == "windows" {
-		log.Println("windows")
-	}
-
 	latest := semver.LatestVersion(versions)
 
 	assets, err := binResolver.GetReleaseAssets(repo, latest)
@@ -47,44 +43,26 @@ func Grab(c *cli.Context) (err error) {
 		return
 	}
 
-	selectedAsset := resolver.AssetItem{}
+	var matcher *resolver.Matcher
 
-	alternateOS := map[string]string{
-		"darwin": "macos",
+	log.Println(filename)
+
+	if len(filename) > 0 {
+		matcher = resolver.NewMatcher(assets,
+			resolver.WithNameMatcher(filename))
+	} else {
+		matcher = resolver.NewMatcher(assets,
+			resolver.WithDefaultMatcher())
 	}
 
-	for _, asset := range assets {
-		assetName := strings.ToLower(asset.Name)
-		osMatch := strings.Contains(assetName, runtime.GOOS)
-
-		if !osMatch {
-			osMatch = strings.Contains(assetName, alternateOS[runtime.GOOS])
-		}
-
-		if !(asset.IsTarball && osMatch && strings.Contains(assetName, runtime.GOARCH)) {
-			continue
-		}
-
-		selectedAsset = asset
-	}
+	selectedAsset := matcher.Selected
 
 	downloadPath := path.Join(".")
 	outPath := path.Join(downloadPath, selectedAsset.Name)
 	cmd := exec.Command("curl", "-sfL", "-o", outPath, selectedAsset.URL)
 	cmd.Dir = downloadPath
 
-	err = command(cmd)
+	err = utils.Command(cmd)
 
 	return
-}
-
-func command(cmd *exec.Cmd) error {
-	var w strings.Builder
-	cmd.Stderr = &w
-	err := cmd.Run()
-	if err != nil {
-		log.Println(strings.TrimSpace(w.String()))
-		return err
-	}
-	return nil
 }
