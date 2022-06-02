@@ -2,6 +2,8 @@
 layout: home
 editlink: true
 
+sidebar: false
+
 hero:
   name: "grab"
   tagline: asset downloader 
@@ -12,8 +14,8 @@ hero:
       link: /guide/
     
     - theme: alt
-      text: download
-      link: https://github.com/barelyhuman/grab/releases
+      text: support
+      link: https://github.com/sponsors/barelyhuman
 
 features:
   - title: open source
