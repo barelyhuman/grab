@@ -34,7 +34,7 @@ func main() {
 				Name:    "filename",
 				Aliases: []string{"f"},
 				Usage:   "the filename to grab, if files are similarly named",
-			}
+			},
 		},
 		Commands: []*cli.Command{
 			{
