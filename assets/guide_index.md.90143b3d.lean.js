@@ -1,1 +1,0 @@
-import{_ as t,c as e,o as a,a as i}from"./app.87ddd3d2.js";const g='{"title":"getting started","description":"","frontmatter":{"layout":"doc"},"headers":[],"relativePath":"guide/index.md","lastUpdated":1654188850000}',o={name:"guide/index.md"},s=i("",4),n=[s];function r(d,c,l,p,h,_){return a(),e("div",null,n)}var m=t(o,[["render",r]]);export{g as __pageData,m as default};
