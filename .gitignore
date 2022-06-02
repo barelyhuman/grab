@@ -2,3 +2,5 @@
 .DS_Store
 .gitignore
 grab
+node_modules
+dist
