@@ -38,7 +38,7 @@ func WithDefaultMatcher() matcherOptions {
 				osMatch = strings.Contains(assetName, alternateOS[runtime.GOOS])
 			}
 
-			if !(asset.IsTarball && osMatch && strings.Contains(assetName, runtime.GOARCH)) {
+			if !(asset.IsArchive && osMatch && strings.Contains(assetName, runtime.GOARCH)) {
 				continue
 			}
 

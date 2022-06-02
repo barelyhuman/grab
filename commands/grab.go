@@ -1,7 +1,6 @@
 package commands
 
 import (
-	"log"
 	"os/exec"
 	"path"
 
@@ -44,8 +43,6 @@ func Grab(c *cli.Context) (err error) {
 	}
 
 	var matcher *resolver.Matcher
-
-	log.Println(filename)
 
 	if len(filename) > 0 {
 		matcher = resolver.NewMatcher(assets,

@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/barelyhuman/grab/resolver"
+	"github.com/barelyhuman/grab/utils"
 	"github.com/google/go-github/v28/github"
 	"golang.org/x/oauth2"
 )
@@ -95,7 +96,7 @@ func (gr *Resolver) GetReleaseAssets(repoPath string, releaseVersion string) (as
 		assets = append(assets, resolver.AssetItem{
 			Name:      name,
 			URL:       ra.GetBrowserDownloadURL(),
-			IsTarball: strings.HasSuffix(name, ".tar.gz"),
+			IsArchive: utils.IsArchive(name),
 			IsMD5:     strings.HasSuffix(name, ".md5"),
 		})
 	}

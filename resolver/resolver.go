@@ -2,7 +2,7 @@ package resolver
 
 type AssetItem struct {
 	Name      string
-	IsTarball bool
+	IsArchive bool
 	IsMD5     bool
 	URL       string
 }
