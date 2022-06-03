@@ -21,7 +21,7 @@ func Grab(c *cli.Context) (err error) {
 	switch provider {
 	case "github":
 		{
-			token := env.Get("GITHUB_TOKEN", c.String("token"))
+			token := env.Get("GRAB_TOKEN", c.String("token"))
 			binResolver = ghr.NewResolver(
 				ghr.WithToken(token),
 			)
