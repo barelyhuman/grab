@@ -9,6 +9,7 @@ export default defineConfig({
 
   themeConfig: {
     repo: "barelyhuman/grab",
+    repoLabel:"github",
     docsDir: "docs",
     docsBranch: "main",
     editLinks: true,
@@ -38,6 +39,7 @@ function getGuideSidebar() {
       children: [
         ["/guide/", "getting started"],
         ["/guide/installation", "installation"],
+        ["/guide/ci", "ci"],
       ].map((i) => toItem(i)),
     },
     {
