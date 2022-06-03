@@ -1,4 +1,4 @@
-import{_ as e,c as a,o as r,a as o}from"./app.72cc93c7.js";const m='{"title":"cli reference","description":"","frontmatter":{"layout":"doc"},"headers":[{"level":2,"title":"global usage","slug":"global-usage"},{"level":3,"title":"examples","slug":"examples"},{"level":2,"title":"commands","slug":"commands"},{"level":3,"title":"providers","slug":"providers"}],"relativePath":"reference/cli.md","lastUpdated":1654190871000}',s={},i=o(`<h1 id="cli-reference" tabindex="-1">cli reference <a class="header-anchor" href="#cli-reference" aria-hidden="true">#</a></h1><h2 id="global-usage" tabindex="-1">global usage <a class="header-anchor" href="#global-usage" aria-hidden="true">#</a></h2><div class="language-"><pre><code>NAME:
+import{_ as e,c as a,o as r,d as o}from"./app.de2b8c8b.js";const m='{"title":"cli reference","description":"","frontmatter":{"layout":"doc"},"headers":[{"level":2,"title":"global usage","slug":"global-usage"},{"level":3,"title":"examples","slug":"examples"},{"level":2,"title":"commands","slug":"commands"},{"level":3,"title":"providers","slug":"providers"}],"relativePath":"reference/cli.md","lastUpdated":1654232922000}',s={},i=o(`<h1 id="cli-reference" tabindex="-1">cli reference <a class="header-anchor" href="#cli-reference" aria-hidden="true">#</a></h1><h2 id="global-usage" tabindex="-1">global usage <a class="header-anchor" href="#global-usage" aria-hidden="true">#</a></h2><div class="language-"><pre><code>NAME:
    grab - download a binary from various cdn provisions
 
 USAGE:
@@ -31,4 +31,4 @@ USAGE:
 
 OPTIONS:
    --help, -h  show help (default: false)
-</code></pre></div>`,16),n=[i];function l(t,d,c,p,h,u){return r(),a("div",null,n)}var v=e(s,[["render",l]]);export{m as __pageData,v as default};
+</code></pre></div>`,16),n=[i];function l(d,t,c,p,h,u){return r(),a("div",null,n)}var v=e(s,[["render",l]]);export{m as __pageData,v as default};
