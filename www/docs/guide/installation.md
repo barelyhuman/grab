@@ -16,7 +16,7 @@ if this is being setup for a non-ci / interactive systems, you can download the 
 
 if you are on a ci that already has golang installed and configured, you can use the `go get` to build it for your system
 
-```sh
+```bash
 go get -u github.com/barelyhuman/grab
 ```
 
@@ -27,6 +27,6 @@ though i wouldn't recommend this method since, `grab` was an idea that came up w
 before i could move ahead with rest of my work. even though i own the service, i have no control over my luck and cannot guarantee what dr. murphy will plan for me next, so use this with caution
 :::
 
-```sh
+```bash
 curl -sf https://goblin.barelyhuman.xyz/github.com/barelyhuman/grab | sh
 ```

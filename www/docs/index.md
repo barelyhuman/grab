@@ -20,6 +20,6 @@ footer: MIT Licensed | Made for fun by Reaper
 
 Make downloading assets as easy as
 
-```sh
+```bash
 grab barelyhuman/commitlog
 ```

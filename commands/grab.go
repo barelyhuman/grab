@@ -5,7 +5,6 @@ import (
 	"path"
 
 	"github.com/barelyhuman/go/env"
-	"github.com/barelyhuman/go/semver"
 	"github.com/barelyhuman/grab/resolver"
 	ghr "github.com/barelyhuman/grab/resolver/github"
 	"github.com/barelyhuman/grab/utils"
@@ -16,6 +15,7 @@ func Grab(c *cli.Context) (err error) {
 	repo := c.Args().Get(0)
 	provider := c.String("provider")
 	filename := c.String("filename")
+	version := c.String("version")
 	var binResolver resolver.Resolver
 
 	switch provider {
@@ -30,11 +30,12 @@ func Grab(c *cli.Context) (err error) {
 	}
 
 	versions, err := binResolver.GetVersions(repo)
+
 	if err != nil {
 		return err
 	}
 
-	latest := semver.LatestVersion(versions)
+	latest := utils.MatchOrLatestVersion(versions, version)
 
 	assets, err := binResolver.GetReleaseAssets(repo, latest)
 

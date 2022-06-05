@@ -23,7 +23,7 @@ func repoToParts(repoPath string) (owner, repo string, err error) {
 	repoParts := strings.Split(repoPath, "/")
 
 	if len(repoParts) < 2 {
-		err = fmt.Errorf("Invalid repo path, please make sure to pass a path in the following pattern `owner/repo`")
+		err = fmt.Errorf("invalid repo path, please make sure to pass a path in the following pattern `owner/repo`")
 		return
 	}
 

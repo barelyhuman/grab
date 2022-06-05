@@ -14,7 +14,7 @@ USAGE:
    grab [global options] command [command options] [arguments...]
 
 VERSION:
-   v0.0.0
+   v0.0.1-beta.1
 
 COMMANDS:
    providers, p  Grab's supported providers
@@ -26,35 +26,38 @@ GLOBAL OPTIONS:
    --help, -h                  show help (default: false)
    --print-version, -V         print only the version (default: false)
    --provider value, -p value  the provider to use, to see supported providers run 'grab providers' (default: "github")
+   --version value, -v value   the version of the asset to grab (accepts vX.X.X and X.X.X)
 ```
 
 ### examples
 
 to grab the latest tarball for hugo for your specific system
 
-```sh
+```bash
 grab -p github gohugoio/hugo
 ```
 
 to grab a specific tarball for hugo
 
-```sh
+```bash
 grab -p github --filename 'hugo_0.100.1_Linux-ARM.deb' gohugoio/hugo
 ```
 
 `github` is the default provider so it can be omitted, so getting something like `hugo` could be
 as simple as
 
-```sh
+```bash
 grab gohugoio/hugo
 ```
 
 it works with other programs as well, let's try a few of mine
 
-```sh
+```bash
 grab barelyhuman/commitlog # go runtime tarball
+grab barelyhuman/commitlog -v 0.0.10 # get version 0.0.10 specifically,
+# will get the latest version if it doesn't find the tag for this specifically
 grab barelyhuman/mudkip # nim lang tarball
-grab barelyhuman/statico # go runtime tarball 
+grab barelyhuman/statico # go runtime tarball
 ```
 
 ## commands

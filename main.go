@@ -35,6 +35,11 @@ func main() {
 				Aliases: []string{"f"},
 				Usage:   "the filename to grab, if files are similarly named",
 			},
+			&cli.StringFlag{
+				Name:    "version",
+				Aliases: []string{"v"},
+				Usage:   "the version of the asset to grab (accepts vX.X.X and X.X.X) ",
+			},
 		},
 		Commands: []*cli.Command{
 			{
